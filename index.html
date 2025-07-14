@@ -1,0 +1,47 @@
+{% extends "base1.html" %} {% block content %}
+
+<h2 class="text-white">Image Classifier</h2>
+<style>
+    body{
+        background-image: url(/static/bg1.jpg);
+        background-size: cover;
+    }
+   
+</style>
+<body>
+
+<div class="row">
+<div class="col-md-7">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result" class="text-center text-danger">
+        <span> </span>
+    </h3>
+
+</div>
+
+<div class="col-md-5" id="remedi" >
+
+</div>
+
+</div>
+
+</body>
+{% endblock %}
